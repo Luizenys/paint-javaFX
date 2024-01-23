@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.SpinnerValueFactory.IntegerSpinnerValueFactory?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="720.0" prefWidth="1313.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poofx.FXMLDocumentController">
+   <children>
+      <MenuBar layoutX="-2.0" layoutY="2.0" prefHeight="25.0" prefWidth="1305.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Arquivo">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#novodesenho" text="Novo Desenho" />
+                  <MenuItem mnemonicParsing="false" text="Salvar" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Editar">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Ajuda">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <TitledPane animated="false" layoutX="1096.0" layoutY="48.0" prefHeight="198.0" prefWidth="206.0" text="Prévia">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Pane layoutX="2.0" layoutY="-14.0" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Canvas fx:id="copycanvas" height="159.0" layoutX="14.0" layoutY="21.0" width="173.0" />
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
+      <TitledPane layoutX="59.0" layoutY="48.0" prefHeight="254.0" prefWidth="134.0" text="Ferramentas">
+         <content>
+            <Pane prefHeight="215.0" prefWidth="132.0">
+               <children>
+                 <Button fx:id="teste" layoutX="23.0" layoutY="12.0" mnemonicParsing="false" onAction="#handleButtonAction" onMouseClicked="#escolhipincel" prefHeight="38.0" prefWidth="36.0">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@oi.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button layoutX="76.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#escolhiapagar" prefHeight="34.0" prefWidth="36.0">
+                     <graphic>
+                        <ImageView fitHeight="17.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@eraser.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button layoutX="22.0" layoutY="59.0" mnemonicParsing="false" onAction="#escolhiquadrado" prefHeight="34.0" prefWidth="36.0">
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@square.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button layoutX="76.0" layoutY="60.0" mnemonicParsing="false" onAction="#escolhicirculo" prefHeight="34.0" prefWidth="36.0">
+                     <graphic>
+                        <ImageView fitHeight="19.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@circle.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button layoutX="23.0" layoutY="104.0" mnemonicParsing="false" onAction="#escolhireta" prefHeight="34.0" prefWidth="36.0">
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@line.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button layoutX="76.0" layoutY="104.0" mnemonicParsing="false" onAction="#escolhipintar" prefHeight="34.0" prefWidth="36.0">
+                     <graphic>
+                        <ImageView fitHeight="21.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@bucket.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button layoutX="76.0" layoutY="143.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="36.0">
+                     <graphic>
+                        <ImageView fitHeight="22.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@cut.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button layoutX="23.0" layoutY="143.0" mnemonicParsing="false" onAction="#escolhitexto" prefHeight="34.0" prefWidth="36.0">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@text.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button layoutX="23.0" layoutY="184.0" mnemonicParsing="false" onAction="#zoommais" prefHeight="34.0" prefWidth="36.0">
+                     <graphic>
+                        <ImageView fitHeight="22.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@more.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button layoutX="76.0" layoutY="184.0" mnemonicParsing="false" onAction="#zoommenos" prefHeight="34.0" prefWidth="36.0">
+                     <graphic>
+                        <ImageView fitHeight="15.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@less.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </Pane>
+         </content>
+      </TitledPane>
+      <AnchorPane layoutX="264.0" layoutY="73.0" prefHeight="634.0" prefWidth="826.0" style="-fx-background-color: gray;">
+         <children>
+            <ScrollPane fx:id="mudemude" pickOnBounds="false" prefHeight="634.0" prefWidth="826.0" snapToPixel="false" style="-fx-background-color: gray;">
+              <content>
+                <AnchorPane fx:id="controlandopainel" minHeight="0.0" minWidth="0.0" prefHeight="625.0" prefWidth="816.0">
+                     <children>
+                        <Pane prefHeight="631.0" prefWidth="826.0" style="-fx-background-color: white;">
+                           <children>
+                              <Canvas fx:id="drawble" height="631.0" onMouseClicked="#desenharmaolivre" onMouseDragged="#desenharmaolivre2" onMousePressed="#desenharmaolivre1" onMouseReleased="#desenharmaolivre3" onZoom="#zoommais" onZoomStarted="#zoommenos" width="826.0" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+      <TitledPane layoutX="23.0" layoutY="310.0" prefHeight="208.0" prefWidth="206.0" text="Configurar">
+         <content>
+            <Pane fx:id="testess" prefHeight="197.0" prefWidth="204.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" text="Tamanho:" />
+                  <Spinner fx:id="siz" layoutX="74.0" layoutY="10.0" opacity="0.72" prefHeight="11.0" prefWidth="55.0">
+                      <valueFactory>
+                        <SpinnerValueFactory.IntegerSpinnerValueFactory amountToStepBy="1" initialValue="1" max="20" min="0" />
+                        </valueFactory>
+                  </Spinner>
+                  <Label layoutX="14.0" layoutY="50.0" text="Opacidade:" />
+                  <Slider fx:id="opacidade" layoutX="80.0" layoutY="52.0" onMouseClicked="#acompanharopacidade" onMouseDragged="#acompanharopacidade" prefHeight="14.0" prefWidth="52.0" />
+                  <Label fx:id="acompanharopacidad" layoutX="132.0" layoutY="51.0" prefHeight="17.0" prefWidth="32.0" text="100%" />
+                  <TextField fx:id="texto" layoutX="59.0" layoutY="84.0" prefHeight="25.0" prefWidth="134.0" />
+                  <Label layoutX="14.0" layoutY="88.0" text="Texto:" />
+                  <Canvas fx:id="previacor" height="54.0" layoutX="22.0" layoutY="117.0" width="75.0" />
+                  <ColorPicker fx:id="selecionarcor" layoutX="103.0" layoutY="132.0" onAction="#mudarcor" prefHeight="25.0" prefWidth="90.0" />
+               </children>
+            </Pane>
+         </content>
+      </TitledPane>
+      <TitledPane animated="false" layoutX="1096.0" layoutY="255.0" prefHeight="455.0" prefWidth="206.0" text="Camadas">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <ListView fx:id="laiers" layoutX="2.0" layoutY="53.0" prefHeight="368.0" prefWidth="197.0" style="-fx-background-color: null;" />
+                  <Pane layoutX="-4.0" layoutY="-9.0" prefHeight="61.0" prefWidth="206.0">
+                     <children>
+                        <Button layoutX="14.0" layoutY="20.0" mnemonicParsing="false" onAction="#criarcamada" prefHeight="25.0" prefWidth="34.0" text="+" />
+                        <Button layoutX="59.0" layoutY="21.0" mnemonicParsing="false" onAction="#deletarcamada" prefHeight="25.0" prefWidth="34.0" text="-" />
+                        <Button layoutX="103.0" layoutY="21.0" minHeight="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="44.0" text="up" />
+                        <Button layoutX="153.0" layoutY="21.0" minHeight="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="46.0" text="down" />
+                     </children>
+                  </Pane>
+               </children></AnchorPane>
+        </content>
+      </TitledPane>
+      <Button layoutX="302.0" layoutY="42.0" mnemonicParsing="false" onAction="#redo" prefHeight="25.0" prefWidth="27.0">
+         <graphic>
+            <ImageView fitHeight="19.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <image>
+                  <Image url="@icon-ios7-redo-512.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button layoutX="264.0" layoutY="42.0" mnemonicParsing="false" onAction="#undo" prefHeight="25.0" prefWidth="27.0">
+         <graphic>
+            <ImageView fitHeight="19.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true" rotate="177.1" smooth="false">
+               <image>
+                  <Image url="@icon-ios7-redo-512.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>
